@@ -475,7 +475,7 @@ export function generateMeasurementQuestion() {
 // ===============================================================
 export function generateGeometryQuestion() {
   generatedCounter++
-  const kind = randInt(1, 4)
+  const kind = randInt(1, 5)
 
   if (kind === 1) {
     // Đếm hình chữ nhật ghép từ N ô vuông đơn
@@ -488,8 +488,9 @@ export function generateGeometryQuestion() {
       topic: 'geometry',
       difficulty: 'medium',
       type: 'fill_blank',
-      content: `Một thanh hình chữ nhật dài được chia đều thành ${n} ô vuông nhỏ nằm ngang liền kề. Hỏi trong hình vẽ có tất cả bao nhiêu hình chữ nhật?`,
+      content: `Quan sát hình vẽ bên dưới (thanh hình chữ nhật chia thành ${n} ô vuông nhỏ). Hỏi trong hình vẽ có tất cả bao nhiêu hình chữ nhật?`,
       correctAnswer: String(totalRects),
+      diagram: { type: 'split_rect', count: n },
       hint: `Đếm các hình chữ nhật đơn (ghép từ 1 ô: ${n} hình), ghép từ 2 ô (${n - 1} hình)... rồi cộng lại.`,
       explanation: `Số hình chữ nhật ghép từ:\n- 1 ô vuông: có ${n} hình.\n- 2 ô vuông: có ${n - 1} hình.\n- 3 ô vuông: có ${n - 2} hình.\n...\nTổng số hình chữ nhật là: ${Array.from({ length: n }, (_, i) => n - i).join(' + ')} = ${totalRects} (hình chữ nhật).\nĐáp số: ${totalRects}.`
     }
@@ -504,8 +505,9 @@ export function generateGeometryQuestion() {
       topic: 'geometry',
       difficulty: 'medium',
       type: 'fill_blank',
-      content: `Cho một hình tam giác lớn có đỉnh A. Kẻ các đoạn thẳng từ đỉnh A xuống cạnh đáy chia cạnh đáy thành ${parts} đoạn nhỏ. Hỏi hình vẽ có tất cả bao nhiêu hình tam giác?`,
+      content: `Quan sát hình vẽ bên dưới: Cho hình tam giác lớn có đỉnh A, các đoạn thẳng kẻ từ A chia đáy thành ${parts} đoạn nhỏ. Hỏi hình vẽ có tất cả bao nhiêu hình tam giác?`,
       correctAnswer: String(totalTriangles),
+      diagram: { type: 'apex_triangle', baseSegments: parts },
       hint: `Đếm số hình tam giác đơn, tam giác ghép đôi, tam giác ghép ba... rồi tính tổng.`,
       explanation: `Mỗi đoạn thẳng trên cạnh đáy kết hợp với đỉnh A sẽ tạo thành một hình tam giác.\nĐáy có ${parts} đoạn đơn, nên số hình tam giác là:\n${Array.from({ length: parts }, (_, i) => parts - i).join(' + ')} = ${totalTriangles} (hình tam giác).\nĐáp số: ${totalTriangles}.`
     }
@@ -522,13 +524,14 @@ export function generateGeometryQuestion() {
       topic: 'geometry',
       difficulty: 'easy',
       type: 'fill_blank',
-      content: `Tính chu vi của hình tam giác có độ dài các cạnh lần lượt là: ${a} cm, ${b} cm và ${c} cm. (Chỉ cần điền số đo bằng cm)`,
+      content: `Cho hình tam giác ABC có độ dài các cạnh như hình vẽ bên dưới. Tính chu vi của hình tam giác ABC: ........ cm.`,
       correctAnswer: String(perimeter),
+      diagram: { type: 'triangle_perimeter', a, b, c, unit: 'cm' },
       hint: `Chu vi hình tam giác bằng tổng độ dài 3 cạnh: ${a} + ${b} + ${c}.`,
       explanation: `Chu vi của hình tam giác là:\n${a} + ${b} + ${c} = ${perimeter} (cm).\nĐáp số: ${perimeter}.`
     }
-  } else {
-    // Độ dài đường gấp khúc gồm 3 hoặc 4 đoạn
+  } else if (kind === 4) {
+    // Độ dài đường gấp khúc gồm 3 đoạn
     const d1 = randInt(12, 28)
     const d2 = randInt(15, 30)
     const d3 = randInt(10, 25)
@@ -540,10 +543,26 @@ export function generateGeometryQuestion() {
       topic: 'geometry',
       difficulty: 'easy',
       type: 'fill_blank',
-      content: `Một đường gấp khúc gồm 3 đoạn thẳng có độ dài lần lượt là ${d1} cm, ${d2} cm và ${d3} cm. Tính độ dài đường gấp khúc đó: ........ cm.`,
+      content: `Cho đường gấp khúc ABCD có kích thước như hình vẽ bên dưới. Tính độ dài đường gấp khúc ABCD: ........ cm.`,
       correctAnswer: String(totalLen),
+      diagram: { type: 'polyline', d1, d2, d3 },
       hint: `Độ dài đường gấp khúc bằng tổng độ dài các đoạn thẳng: ${d1} + ${d2} + ${d3}.`,
       explanation: `Độ dài đường gấp khúc là:\n${d1} + ${d2} + ${d3} = ${totalLen} (cm).\nĐáp số: ${totalLen} cm.`
+    }
+  } else {
+    // Đếm hình tứ giác
+    return {
+      id: `gen_geom_${generatedCounter}`,
+      round: 'custom',
+      section: 'Bài 3: Hình học & Đếm hình',
+      topic: 'geometry',
+      difficulty: 'hard',
+      type: 'fill_blank',
+      content: `Quan sát hình vẽ bên dưới: Trong hình bên có tất cả bao nhiêu hình tứ giác?`,
+      correctAnswer: '4',
+      diagram: { type: 'composite_quadrilateral' },
+      hint: `Đếm các hình tứ giác đơn và hình tứ giác ghép đôi, cùng hình chữ nhật lớn bao quanh.`,
+      explanation: `Hình vẽ gồm hình tứ giác ở giữa (hình 2), hai hình tứ giác ghép đôi (1+2 và 2+3), và 1 hình chữ nhật lớn bao quanh.\nTổng cộng có 4 hình tứ giác.`
     }
   }
 }

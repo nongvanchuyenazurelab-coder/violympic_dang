@@ -798,7 +798,8 @@ export const QUESTIONS_BANK = [
     topic: 'geometry',
     difficulty: 'medium',
     type: 'fill_blank',
-    content: 'Một hình chữ nhật được chia làm 3 ô vuông nhỏ nối liền nhau nằm ngang. Trong hình vẽ có tất cả ………. hình chữ nhật?',
+    content: 'Một hình chữ nhật được chia làm 3 ô vuông nhỏ nối liền nhau nằm ngang (như hình vẽ bên dưới). Trong hình vẽ có tất cả ………. hình chữ nhật?',
+    diagram: { type: 'split_rect', count: 3 },
     correctAnswer: '6',
     hint: 'Đếm hình đơn (ghép từ 1 ô: 3 hình), hình đôi (ghép từ 2 ô: 2 hình), hình ba (ghép từ cả 3 ô: 1 hình). Tổng: 3 + 2 + 1.',
     explanation: 'Số hình chữ nhật ghép từ:\n- 1 ô: có 3 hình\n- 2 ô: có 2 hình\n- 3 ô: có 1 hình\nTổng cộng có: 3 + 2 + 1 = 6 hình chữ nhật.'

@@ -96,11 +96,17 @@
           </div>
 
           <!-- Question Content Prompt -->
-          <div class="mb-6">
+          <div class="mb-4">
             <p class="text-lg sm:text-2xl font-black text-slate-800 leading-relaxed">
               {{ currentQuestion.content }}
             </p>
           </div>
+
+          <!-- Question Geometry Diagram if available -->
+          <GeometryDiagram
+            v-if="currentQuestion.diagram"
+            :diagram="currentQuestion.diagram"
+          />
 
           <!-- Question Interactive Renderer -->
           <div class="min-h-[140px] py-2">
@@ -241,6 +247,7 @@ import MatchPairsQuestion from '../components/questions/MatchPairsQuestion.vue'
 import VerticalMathQuestion from '../components/questions/VerticalMathQuestion.vue'
 import MultipleChoiceQuestion from '../components/questions/MultipleChoiceQuestion.vue'
 import FillBlankQuestion from '../components/questions/FillBlankQuestion.vue'
+import GeometryDiagram from '../components/GeometryDiagram.vue'
 
 const exam = computed(() => examStore.exam)
 const currentQuestionIndex = ref(0)

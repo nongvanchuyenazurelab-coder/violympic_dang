@@ -28,6 +28,12 @@
         </p>
       </div>
 
+      <!-- Geometry Diagram if available -->
+      <GeometryDiagram
+        v-if="question.diagram"
+        :diagram="question.diagram"
+      />
+
       <!-- Question Component based on Type -->
       <div>
         <MatrixOrderQuestion
@@ -92,6 +98,7 @@ import MatrixOrderQuestion from './questions/MatrixOrderQuestion.vue'
 import VerticalMathQuestion from './questions/VerticalMathQuestion.vue'
 import MultipleChoiceQuestion from './questions/MultipleChoiceQuestion.vue'
 import FillBlankQuestion from './questions/FillBlankQuestion.vue'
+import GeometryDiagram from './GeometryDiagram.vue'
 import { evaluateAnswer, gradeMatrixOrder, gradeVerticalMath } from '../utils/mathEvaluator'
 import { soundManager } from '../utils/soundEffects'
 import { triggerStarBurst } from '../utils/confetti'

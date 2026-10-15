@@ -166,9 +166,15 @@
           </div>
 
           <!-- Question Content -->
-          <p class="font-black text-slate-800 text-base sm:text-lg mb-4">
+          <p class="font-black text-slate-800 text-base sm:text-lg mb-3">
             {{ q.content }}
           </p>
+
+          <!-- Geometry Diagram if available -->
+          <GeometryDiagram
+            v-if="q.diagram"
+            :diagram="q.diagram"
+          />
 
           <!-- Compare Student Answer vs Correct Answer -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4 text-sm font-bold">
@@ -259,6 +265,7 @@ import { computed, ref } from 'vue'
 import { examStore } from '../store/examStore'
 import MascotGuide from '../components/MascotGuide.vue'
 import RetryQuestionModal from '../components/RetryQuestionModal.vue'
+import GeometryDiagram from '../components/GeometryDiagram.vue'
 
 const result = computed(() => examStore.lastResult)
 const activeReviewFilter = ref('all')
