@@ -559,10 +559,10 @@ export function generateGeometryQuestion() {
       difficulty: 'hard',
       type: 'fill_blank',
       content: `Quan sát hình vẽ bên dưới: Trong hình bên có tất cả bao nhiêu hình tứ giác?`,
-      correctAnswer: '4',
+      correctAnswer: '6',
       diagram: { type: 'composite_quadrilateral' },
-      hint: `Đếm các hình tứ giác đơn và hình tứ giác ghép đôi, cùng hình chữ nhật lớn bao quanh.`,
-      explanation: `Hình vẽ gồm hình tứ giác ở giữa (hình 2), hai hình tứ giác ghép đôi (1+2 và 2+3), và 1 hình chữ nhật lớn bao quanh.\nTổng cộng có 4 hình tứ giác.`
+      hint: `Mỗi phần 1, 2, 3 đều có 4 cạnh (là 1 hình tứ giác). Hãy đếm các hình đơn, ghép đôi và ghép cả 3 phần lại.`,
+      explanation: `Cách đếm hình tứ giác một cách có hệ thống:\n- Hình đơn (tạo bởi 1 phần): gồm hình 1, hình 2, hình 3 => có 3 hình tứ giác.\n- Hình đôi (tạo bởi 2 phần ghép lại): gồm hình (1 + 2) và hình (2 + 3) => có 2 hình tứ giác.\n- Hình ba (tạo bởi cả 3 phần ghép lại): gồm hình (1 + 2 + 3) chính là hình chữ nhật lớn bao quanh => có 1 hình tứ giác.\nTổng cộng trong hình có: 3 + 2 + 1 = 6 hình tứ giác.\nĐáp số: 6.`
     }
   }
 }

@@ -804,6 +804,84 @@ export const QUESTIONS_BANK = [
     hint: 'Đếm hình đơn (ghép từ 1 ô: 3 hình), hình đôi (ghép từ 2 ô: 2 hình), hình ba (ghép từ cả 3 ô: 1 hình). Tổng: 3 + 2 + 1.',
     explanation: 'Số hình chữ nhật ghép từ:\n- 1 ô: có 3 hình\n- 2 ô: có 2 hình\n- 3 ô: có 1 hình\nTổng cộng có: 3 + 2 + 1 = 6 hình chữ nhật.'
   },
+  {
+    id: 'v6_b3_quad',
+    round: 'vong-6',
+    section: 'Bài 3: Hình học & Đếm hình',
+    topic: 'geometry',
+    difficulty: 'hard',
+    type: 'fill_blank',
+    content: 'Quan sát hình vẽ bên dưới: Trong hình bên có tất cả bao nhiêu hình tứ giác?',
+    diagram: { type: 'composite_quadrilateral' },
+    correctAnswer: '6',
+    hint: 'Mỗi phần 1, 2, 3 đều có 4 cạnh (là 1 hình tứ giác). Hãy đếm các hình đơn, hình đôi và hình ghép cả 3 phần lại.',
+    explanation: 'Cách đếm hình tứ giác một cách có hệ thống:\n- Hình đơn (tạo bởi 1 phần): gồm hình 1, hình 2, hình 3 => có 3 hình tứ giác.\n- Hình đôi (tạo bởi 2 phần ghép lại): gồm hình (1 + 2) và hình (2 + 3) => có 2 hình tứ giác.\n- Hình ba (tạo bởi cả 3 phần ghép lại): gồm hình (1 + 2 + 3) chính là hình chữ nhật lớn bao quanh => có 1 hình tứ giác.\nTổng cộng trong hình có: 3 + 2 + 1 = 6 hình tứ giác.\nĐáp số: 6.'
+  },
+  {
+    id: 'v6_b3_tri_h',
+    round: 'vong-6',
+    section: 'Bài 3: Hình học & Đếm hình',
+    topic: 'geometry',
+    difficulty: 'medium',
+    type: 'fill_blank',
+    content: 'Quan sát hình vẽ tam giác ABC có đoạn thẳng MN cắt ngang (như hình bên dưới): Trong hình vẽ có tất cả bao nhiêu hình tam giác?',
+    diagram: { type: 'triangle_with_horizontal' },
+    correctAnswer: '2',
+    hint: 'Có 1 hình tam giác nhỏ ở phía trên (AMN) và 1 hình tam giác lớn bao quanh (ABC).',
+    explanation: 'Các hình tam giác trong hình vẽ gồm:\n1. Tam giác nhỏ ở phía trên: tam giác AMN.\n2. Tam giác lớn toàn bộ: tam giác ABC.\n(Phần bên dưới BMNC là hình tứ giác).\nVậy có tất cả 2 hình tam giác.\nĐáp số: 2.'
+  },
+  {
+    id: 'v6_b3_tri_h_quad',
+    round: 'vong-6',
+    section: 'Bài 3: Hình học & Đếm hình',
+    topic: 'geometry',
+    difficulty: 'medium',
+    type: 'fill_blank',
+    content: 'Quan sát hình vẽ tam giác ABC có đoạn thẳng MN cắt ngang (như hình bên dưới): Trong hình vẽ có tất cả bao nhiêu hình tứ giác?',
+    diagram: { type: 'triangle_with_horizontal' },
+    correctAnswer: '1',
+    hint: 'Phần phía dưới tạo bởi 4 đỉnh B, M, N, C là hình gì?',
+    explanation: 'Hình tứ giác trong hình vẽ là hình BMNC (có 4 cạnh là BM, MN, NC, CB).\nVậy có tất cả 1 hình tứ giác.\nĐáp số: 1.'
+  },
+  {
+    id: 'v6_b3_apex_tri',
+    round: 'vong-6',
+    section: 'Bài 3: Hình học & Đếm hình',
+    topic: 'geometry',
+    difficulty: 'medium',
+    type: 'fill_blank',
+    content: 'Quan sát hình vẽ tam giác ABC có các đoạn thẳng kẻ từ đỉnh A xuống cạnh đáy BC (như hình bên dưới): Trong hình có tất cả bao nhiêu hình tam giác?',
+    diagram: { type: 'apex_triangle', baseSegments: 3 },
+    correctAnswer: '6',
+    hint: 'Cạnh đáy BC được chia làm 3 đoạn đơn (BD, DE, EC). Số hình tam giác bằng: 3 + 2 + 1.',
+    explanation: 'Cách đếm hình tam giác có chung đỉnh A:\n- Cạnh đáy BC được chia thành 3 đoạn đơn: BD, DE, EC.\n- Tam giác đơn (đáy là 1 đoạn): tam giác ABD, ADE, AEC (có 3 hình).\n- Tam giác ghép đôi (đáy là 2 đoạn ghép lại): tam giác ABE, ADC (có 2 hình).\n- Tam giác ghép ba (đáy là cả 3 đoạn BC): tam giác ABC (có 1 hình).\nTổng số hình tam giác là: 3 + 2 + 1 = 6 hình tam giác.\nĐáp số: 6.'
+  },
+  {
+    id: 'v6_b3_polyline',
+    round: 'vong-6',
+    section: 'Bài 3: Đường gấp khúc',
+    topic: 'geometry',
+    difficulty: 'easy',
+    type: 'fill_blank',
+    content: 'Cho đường gấp khúc ABCD có độ dài các đoạn thẳng như hình vẽ bên dưới: AB = 15 cm, BC = 20 cm, CD = 12 cm. Tính độ dài đường gấp khúc ABCD: ........ cm.',
+    diagram: { type: 'polyline', d1: 15, d2: 20, d3: 12 },
+    correctAnswer: '47',
+    hint: 'Độ dài đường gấp khúc bằng tổng độ dài của 3 đoạn thẳng: 15 + 20 + 12.',
+    explanation: 'Độ dài đường gấp khúc ABCD là:\n15 + 20 + 12 = 47 (cm).\nĐáp số: 47 cm.'
+  },
+  {
+    id: 'v6_b3_peri',
+    round: 'vong-6',
+    section: 'Bài 3: Chu vi hình học',
+    topic: 'geometry',
+    difficulty: 'easy',
+    type: 'fill_blank',
+    content: 'Cho hình tam giác ABC có độ dài các cạnh như hình vẽ bên dưới: AB = 14 cm, BC = 18 cm, CA = 22 cm. Tính chu vi hình tam giác ABC: ........ cm.',
+    diagram: { type: 'triangle_perimeter', a: 14, b: 18, c: 22, unit: 'cm' },
+    correctAnswer: '54',
+    hint: 'Chu vi hình tam giác bằng tổng độ dài ba cạnh: 14 + 18 + 22.',
+    explanation: 'Chu vi của hình tam giác ABC là:\n14 + 18 + 22 = 54 (cm).\nĐáp số: 54 cm.'
+  },
 
   // ==========================================
   // VÒNG 7 (Trang 11 PDF) - Trắc nghiệm Cóc Vàng

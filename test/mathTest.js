@@ -131,6 +131,18 @@ QUESTIONS_BANK.forEach(q => {
 })
 assert(bankErrors === 0, 'Toàn bộ câu hỏi trong ngân hàng đều đạt chuẩn cấu trúc dữ liệu')
 
+// 6. KIỂM THỬ HÌNH HỌC & ĐẾM HÌNH TỨ GIÁC (Geometry & Quadrilaterals)
+console.log('\n6. Kiểm thử Hình học & Đếm hình (Geometry):')
+const geomExam = generateExamByConfig({ count: 5, topic: 'geometry' })
+assert(geomExam.questions.length === 5, 'Tạo đề luyện tập chuyên đề Hình học không bị lặp vô tận')
+assert(geomExam.questions.every(q => q.topic === 'geometry'), 'Tất cả câu hỏi trong đề hình học đều thuộc topic geometry')
+
+const compositeQ = QUESTIONS_BANK.find(q => q.id === 'v6_b3_quad')
+assert(compositeQ && compositeQ.correctAnswer === '6', 'Hình chữ nhật cắt 2 đường xiên gồm chính xác 6 hình tứ giác (3 đơn + 2 đôi + 1 ba)')
+
+const splitRectQ = QUESTIONS_BANK.find(q => q.id === 'v5_b3_5_rect')
+assert(splitRectQ && splitRectQ.correctAnswer === '6', 'Hình chữ nhật chia 3 ô gồm 6 hình chữ nhật')
+
 console.log('\n==================================================')
 console.log(`🎉 KẾT QUẢ: ĐÃ VƯỢT QUA ${passedTests}/${totalTests} BÀI KIỂM THỬ TỰ ĐỘNG!`)
 console.log('==================================================')
