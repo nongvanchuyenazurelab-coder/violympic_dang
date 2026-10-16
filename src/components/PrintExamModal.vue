@@ -47,7 +47,7 @@
       </div>
 
       <!-- PRINTABLE EXAM PAPER BODY -->
-      <div class="p-6 sm:p-10 font-serif text-slate-900 bg-white print:p-4 print:text-black">
+      <div class="p-6 sm:p-10 text-slate-900 bg-white print:p-4 print:text-black print-exam-sheet">
         
         <!-- School & Student Meta Header -->
         <div class="border-b-2 border-slate-800 pb-4 mb-6">
@@ -254,6 +254,12 @@ function triggerPrint() {
 </script>
 
 <style>
+.print-exam-sheet,
+.print-exam-sheet * {
+  font-family: 'Be Vietnam Pro', 'Nunito', 'Segoe UI', Arial, sans-serif !important;
+  text-rendering: optimizeLegibility;
+}
+
 @media print {
   /* Hide header, navigation, and other elements */
   header, footer, nav, #app > div > header, #app > div > footer {
@@ -265,6 +271,12 @@ function triggerPrint() {
     color: black !important;
     padding: 0 !important;
     margin: 0 !important;
+    font-family: 'Be Vietnam Pro', 'Nunito', 'Segoe UI', Arial, sans-serif !important;
+  }
+
+  .print-exam-sheet,
+  .print-exam-sheet * {
+    font-family: 'Be Vietnam Pro', 'Nunito', 'Segoe UI', Arial, sans-serif !important;
   }
 
   .break-inside-avoid {
