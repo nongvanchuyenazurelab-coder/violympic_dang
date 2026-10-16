@@ -1,10 +1,15 @@
 <template>
-  <div v-if="isOpen && exam" class="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-xs flex items-center justify-center p-2 sm:p-4 print:p-0 print:bg-white print:static print:inset-auto">
-    <!-- Modal Card (on screen) / Sheet (on print) -->
-    <div class="bg-white rounded-3xl w-full max-w-4xl max-h-[94vh] overflow-y-auto print:max-h-none print:overflow-visible print:rounded-none print:shadow-none shadow-2xl border-4 border-amber-300 print:border-none flex flex-col">
-      
-      <!-- Top Action Bar (HIDDEN ON PRINT) -->
-      <div class="sticky top-0 z-20 bg-amber-500 text-white px-6 py-4 flex flex-wrap items-center justify-between gap-3 shadow-md print:hidden">
+  <Teleport to="body">
+    <div 
+      v-if="isOpen && exam" 
+      @click.self="$emit('close')"
+      class="print-modal-root fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-xs flex items-center justify-center p-2 sm:p-4 print:p-0 print:bg-white print:static print:inset-auto print:overflow-visible print:block print:w-full"
+    >
+      <!-- Modal Card (on screen) / Sheet (on print) -->
+      <div class="print-paper-card bg-white rounded-3xl w-full max-w-4xl max-h-[94vh] overflow-y-auto print:max-h-none print:overflow-visible print:rounded-none print:shadow-none shadow-2xl border-4 border-amber-300 print:border-none flex flex-col print:block print:w-full print:max-w-none">
+        
+        <!-- Top Action Bar (HIDDEN ON PRINT) -->
+        <div class="print-action-bar sticky top-0 z-20 bg-amber-500 text-white px-6 py-4 flex flex-wrap items-center justify-between gap-3 shadow-md print:hidden">
         <div class="flex items-center gap-2">
           <span class="text-2xl">🖨️</span>
           <div>
@@ -110,8 +115,8 @@
             </div>
 
             <!-- 1. Geometry SVG Diagram if available -->
-            <div v-if="q.diagram" class="my-3 flex justify-center">
-              <div class="max-w-md w-full bg-slate-50 border border-slate-300 rounded-xl p-3">
+            <div v-if="q.diagram" class="my-3 flex justify-center print:my-1">
+              <div class="max-w-md w-full bg-slate-50 border border-slate-300 rounded-xl p-3 print:bg-white print:border-none print:shadow-none print:p-0">
                 <GeometryDiagram :diagram="q.diagram" />
               </div>
             </div>
@@ -226,14 +231,15 @@
       </div>
 
     </div>
-  </div>
+    </div>
+  </Teleport>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch, onMounted, onUnmounted } from 'vue'
 import GeometryDiagram from './GeometryDiagram.vue'
 
-defineProps({
+const props = defineProps({
   exam: {
     type: Object,
     default: null
@@ -244,13 +250,39 @@ defineProps({
   }
 })
 
-defineEmits(['close'])
+const emit = defineEmits(['close'])
 
 const includeSolutions = ref(false)
 
 function triggerPrint() {
   window.print()
 }
+
+function handleKeyDown(e) {
+  if (e.key === 'Escape' && props.isOpen) {
+    emit('close')
+  }
+}
+
+watch(() => props.isOpen, (newVal) => {
+  if (newVal) {
+    document.body.classList.add('printing-exam-active')
+  } else {
+    document.body.classList.remove('printing-exam-active')
+  }
+})
+
+onMounted(() => {
+  window.addEventListener('keydown', handleKeyDown)
+  if (props.isOpen) {
+    document.body.classList.add('printing-exam-active')
+  }
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleKeyDown)
+  document.body.classList.remove('printing-exam-active')
+})
 </script>
 
 <style>
@@ -260,21 +292,73 @@ function triggerPrint() {
   text-rendering: optimizeLegibility;
 }
 
+@page {
+  size: A4 portrait;
+  margin: 12mm 15mm;
+}
+
 @media print {
-  /* Hide header, navigation, and other elements */
-  header, footer, nav, #app > div > header, #app > div > footer {
+  /* 1. HIDE THE ENTIRE WEBSITE (#app) AND ALL NON-PRINT ELEMENTS */
+  #app,
+  header,
+  footer,
+  nav,
+  aside,
+  .print-action-bar,
+  .print\:hidden {
     display: none !important;
   }
-  
-  body, html {
-    background: white !important;
-    color: black !important;
+
+  /* 2. Reset html and body to clean white page */
+  html,
+  body {
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #000000 !important;
     padding: 0 !important;
     margin: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
     font-family: 'Be Vietnam Pro', 'Nunito', 'Segoe UI', Arial, sans-serif !important;
   }
 
-  .print-exam-sheet,
+  /* 3. Reset Modal overlay and paper container */
+  .print-modal-root {
+    position: static !important;
+    inset: auto !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .print-paper-card {
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  .print-exam-sheet {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    font-family: 'Be Vietnam Pro', 'Nunito', 'Segoe UI', Arial, sans-serif !important;
+  }
+
   .print-exam-sheet * {
     font-family: 'Be Vietnam Pro', 'Nunito', 'Segoe UI', Arial, sans-serif !important;
   }

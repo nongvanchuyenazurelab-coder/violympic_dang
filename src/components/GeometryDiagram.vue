@@ -1,5 +1,5 @@
 <template>
-  <div class="my-4 flex flex-col items-center justify-center p-3 sm:p-5 bg-gradient-to-b from-amber-50/70 via-white to-sky-50/50 rounded-3xl border-2 border-amber-300 shadow-sm print:border print:border-slate-300 print:bg-white print:my-2 print:p-2 select-none">
+  <div class="my-4 flex flex-col items-center justify-center p-3 sm:p-5 bg-gradient-to-b from-amber-50/70 via-white to-sky-50/50 rounded-3xl border-2 border-amber-300 shadow-sm print:border-none print:shadow-none print:bg-white print:my-1 print:p-0 select-none">
     
     <div class="text-xs font-black text-amber-800 mb-2 flex items-center gap-1.5 print:hidden">
       <span class="text-base">📐</span> 

@@ -48,3 +48,12 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #d97706;
 }
+
+/* Global Print Isolation: Hide #app and whole website when printing exam paper */
+@media print {
+  body.printing-exam-active #app,
+  .printing-exam-active #app,
+  body:has(.print-modal-root) #app {
+    display: none !important;
+  }
+}
