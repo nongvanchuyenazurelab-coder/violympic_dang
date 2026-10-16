@@ -38,6 +38,18 @@
         </button>
 
         <button
+          @click="examStore.navigate('practice10')"
+          :class="[
+            'px-4 py-2.5 rounded-2xl font-black text-sm transition-all duration-200 flex items-center gap-2 cursor-pointer shadow-sm',
+            examStore.currentView === 'practice10'
+              ? 'bg-purple-600 text-white shadow-purple-300 shadow-md scale-105'
+              : 'bg-purple-50 text-purple-900 hover:bg-purple-100 border border-purple-200'
+          ]"
+        >
+          <span>📝</span> 10 Đề Luyện Thi & In Đề
+        </button>
+
+        <button
           @click="examStore.navigate('rounds')"
           :class="[
             'px-4 py-2.5 rounded-2xl font-black text-sm transition-all duration-200 flex items-center gap-2 cursor-pointer shadow-sm',
@@ -99,30 +111,36 @@
     </div>
 
     <!-- Mobile Nav Bar -->
-    <div class="md:hidden flex items-center justify-around border-t border-amber-200 bg-amber-50/80 px-2 py-2">
+    <div class="md:hidden flex items-center justify-around border-t border-amber-200 bg-amber-50/80 px-1 py-2 overflow-x-auto gap-1">
       <button 
         @click="examStore.navigate('home')" 
-        :class="['px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1', examStore.currentView === 'home' ? 'bg-amber-500 text-white' : 'text-slate-700']"
+        :class="['px-2 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1 whitespace-nowrap', examStore.currentView === 'home' ? 'bg-amber-500 text-white' : 'text-slate-700']"
       >
         <span>🏠</span> Trang Chủ
       </button>
       <button 
-        @click="examStore.navigate('rounds')" 
-        :class="['px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1', examStore.currentView === 'rounds' ? 'bg-amber-500 text-white' : 'text-slate-700']"
+        @click="examStore.navigate('practice10')" 
+        :class="['px-2 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1 whitespace-nowrap', examStore.currentView === 'practice10' ? 'bg-purple-600 text-white' : 'text-purple-900 font-black']"
       >
-        <span>🏆</span> 18 Vòng Thi
+        <span>📝</span> 10 Đề & In
+      </button>
+      <button 
+        @click="examStore.navigate('rounds')" 
+        :class="['px-2 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1 whitespace-nowrap', examStore.currentView === 'rounds' ? 'bg-amber-500 text-white' : 'text-slate-700']"
+      >
+        <span>🏆</span> 18 Vòng
       </button>
       <button 
         @click="examStore.navigate('topics')" 
-        :class="['px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1', examStore.currentView === 'topics' ? 'bg-amber-500 text-white' : 'text-slate-700']"
+        :class="['px-2 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1 whitespace-nowrap', examStore.currentView === 'topics' ? 'bg-amber-500 text-white' : 'text-slate-700']"
       >
         <span>🎯</span> Chủ Đề
       </button>
       <button 
         @click="examStore.navigate('parent')" 
-        :class="['px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1', examStore.currentView === 'parent' ? 'bg-amber-500 text-white' : 'text-slate-700']"
+        :class="['px-2 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1 whitespace-nowrap', examStore.currentView === 'parent' ? 'bg-amber-500 text-white' : 'text-slate-700']"
       >
-        <span>📊</span> Phụ Huynh
+        <span>📊</span> Ba Mẹ
       </button>
     </div>
 

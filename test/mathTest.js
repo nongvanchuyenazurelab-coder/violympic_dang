@@ -21,6 +21,7 @@ import {
 } from '../src/utils/questionGenerator.js'
 
 import { QUESTIONS_BANK, ROUNDS_METADATA } from '../src/data/questionsData.js'
+import { PRACTICE_EXAMS } from '../src/data/practiceExamsData.js'
 
 let totalTests = 0
 let passedTests = 0
@@ -142,6 +143,29 @@ assert(compositeQ && compositeQ.correctAnswer === '6', 'Hình chữ nhật cắt
 
 const splitRectQ = QUESTIONS_BANK.find(q => q.id === 'v5_b3_5_rect')
 assert(splitRectQ && splitRectQ.correctAnswer === '6', 'Hình chữ nhật chia 3 ô gồm 6 hình chữ nhật')
+
+// 7. KIỂM THỬ TRỌN BỘ 10 ĐỀ LUYỆN TẬP & IN ĐỀ (10 Practice Exams)
+console.log('\n7. Kiểm thử Trọn bộ 10 Đề Luyện Tập & In Đề:')
+assert(PRACTICE_EXAMS.length === 10, 'Có đầy đủ đúng 10 đề luyện tập (Đề 01 đến Đề 10)')
+
+let totalPracticeQuestions = 0
+let practiceErrors = 0
+
+PRACTICE_EXAMS.forEach((exam, idx) => {
+  assert(exam.number === idx + 1, `Đề số ${idx + 1} có số thứ tự chính xác`)
+  assert(exam.questions && exam.questions.length === 15, `Đề số ${idx + 1} có đủ 15 câu hỏi chuẩn 3 bài thi`)
+  totalPracticeQuestions += exam.questions.length
+
+  exam.questions.forEach(q => {
+    if (!q.id || !q.content || !q.explanation) practiceErrors++
+    if (q.type === 'multiple_choice' && (!q.options || q.options.length !== 4)) practiceErrors++
+    if (q.type === 'matrix_order' && (!q.items || q.items.length !== 16)) practiceErrors++
+    if (q.diagram && !q.diagram.type) practiceErrors++
+  })
+})
+
+assert(totalPracticeQuestions === 150, 'Tổng cộng đúng 150 câu hỏi qua 10 đề luyện tập')
+assert(practiceErrors === 0, '100% câu hỏi trong 10 đề đều đạt chuẩn cấu trúc dữ liệu và lời giải')
 
 console.log('\n==================================================')
 console.log(`🎉 KẾT QUẢ: ĐÃ VƯỢT QUA ${passedTests}/${totalTests} BÀI KIỂM THỬ TỰ ĐỘNG!`)

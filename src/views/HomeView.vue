@@ -74,6 +74,37 @@
       </div>
     </div>
 
+    <!-- Featured 10 Practice Exams Banner -->
+    <div 
+      @click="examStore.navigate('practice10')"
+      class="p-5 sm:p-6 rounded-3xl bg-gradient-to-r from-purple-600 via-indigo-600 to-amber-500 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-5 cursor-pointer hover:shadow-2xl transition-all group border-3 border-purple-300/40"
+    >
+      <div class="flex items-center gap-4">
+        <div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-xs flex items-center justify-center text-4xl group-hover:scale-110 transition-transform shadow-inner shrink-0">
+          📝
+        </div>
+        <div>
+          <div class="inline-flex items-center gap-1.5 px-3 py-0.5 bg-yellow-300 text-yellow-950 rounded-full text-xs font-black mb-1 shadow-xs">
+            <span>✨ MỚI RA MẮT</span> • Chuẩn Cấu Trúc Toàn Diện
+          </div>
+          <h2 class="text-xl sm:text-2xl font-black tracking-tight">
+            Trọn Bộ 10 Đề Luyện Tập Chuẩn & In Đề Ra Giấy A4
+          </h2>
+          <p class="text-xs sm:text-sm text-purple-100 font-bold mt-1">
+            150 câu hỏi phong phú, có hình vẽ minh họa SVG, hỗ trợ làm bài trực tuyến hoặc in đề ra giấy cho bé luyện chữ
+          </p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2.5 w-full md:w-auto justify-end">
+        <button
+          class="px-5 py-3 rounded-2xl bg-white text-purple-900 font-black text-sm shadow-md group-hover:bg-yellow-300 group-hover:text-yellow-950 transition-all flex items-center gap-2 cursor-pointer whitespace-nowrap active:scale-95"
+        >
+          <span>Khám phá 10 Đề & In Ngay</span>
+          <span>→</span>
+        </button>
+      </div>
+    </div>
+
     <!-- Quick Mode Selector Grid -->
     <div>
       <div class="flex items-center justify-between mb-4">

@@ -1,5 +1,6 @@
 import { reactive, watch } from 'vue'
 import { QUESTIONS_BANK, ROUNDS_METADATA } from '../data/questionsData'
+import { PRACTICE_EXAMS } from '../data/practiceExamsData'
 import { generateExamByConfig } from '../utils/questionGenerator'
 import { evaluateAnswer, gradeMatrixOrder, gradeVerticalMath } from '../utils/mathEvaluator'
 import { soundManager } from '../utils/soundEffects'
@@ -106,6 +107,30 @@ export const examStore = reactive({
     this.userAnswers = {}
     this.timeElapsed = 0
     this.timeLimit = 1200 // 20 minutes
+    this.currentView = 'exam'
+    this.startTimer()
+    this.saveActiveExam()
+    soundManager.playClick()
+  },
+
+  // Start practice exam from 10 curated exams (e.g. 'de-1', 'de-2', ...)
+  startPracticeExam(examId) {
+    const practice = PRACTICE_EXAMS.find(e => e.id === examId)
+    if (!practice) return
+
+    this.exam = {
+      id: `practice_${examId}_${Date.now()}`,
+      title: practice.title,
+      description: practice.subtitle,
+      practiceId: examId,
+      roundId: examId,
+      type: 'practice10',
+      questions: practice.questions
+    }
+
+    this.userAnswers = {}
+    this.timeElapsed = 0
+    this.timeLimit = practice.timeLimit || 1200
     this.currentView = 'exam'
     this.startTimer()
     this.saveActiveExam()

@@ -10,6 +10,9 @@
       <!-- View: Home -->
       <HomeView v-if="examStore.currentView === 'home'" />
 
+      <!-- View: 10 Practice Exams & Print -->
+      <PracticeExamsView v-else-if="examStore.currentView === 'practice10'" />
+
       <!-- View: 18 Rounds -->
       <RoundsView v-else-if="examStore.currentView === 'rounds'" />
 
@@ -47,6 +50,7 @@
 import { examStore } from './store/examStore'
 import AppHeader from './components/AppHeader.vue'
 import HomeView from './views/HomeView.vue'
+import PracticeExamsView from './views/PracticeExamsView.vue'
 import RoundsView from './views/RoundsView.vue'
 import TopicPracticeView from './views/TopicPracticeView.vue'
 import ExamView from './views/ExamView.vue'
