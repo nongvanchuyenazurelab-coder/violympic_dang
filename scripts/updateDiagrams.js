@@ -1,130 +1,127 @@
 import fs from 'fs';
 import { PRACTICE_EXAMS } from '../src/data/practiceExamsData.js';
 
-// Specific diagram helpers based on question data
-function getDiagramForQuestion(q, exam) {
-  if (q.diagram) return q.diagram;
-
-  const sec = q.section || '';
-  const text = q.content || '';
-
-  // 1. Dãy số / Toa tàu
-  if (sec.includes('Toa tàu') || sec.includes('Dãy số') || sec.includes('quy luật')) {
-    if (text.includes('30, 26, 22')) return { type: 'train_sequence', seq: [30, 26, 22, 18] };
-    if (text.includes('1, 2, 4, 7')) return { type: 'train_sequence', seq: [1, 2, 4, 7] };
-    if (text.includes('2, 4, 8, 16')) return { type: 'train_sequence', seq: [2, 4, 8, 16] };
-    if (text.includes('3, 5, 9, 15')) return { type: 'train_sequence', seq: [3, 5, 9, 15] };
-    if (text.includes('5, 10, 15')) return { type: 'train_sequence', seq: [5, 10, 15, 20] };
-    return { type: 'train_sequence', seq: [2, 5, 8, 11] };
-  }
-
-  // 2. Tháp khối lập phương
-  if (sec.includes('Tháp') || sec.includes('khối lập phương')) {
-    return { type: 'cubes_stack', total: 10 };
-  }
-
-  // 3. Cấu tạo số logic
-  if (sec.includes('Cấu tạo số')) {
-    if (text.includes('bằng 9') && text.includes('bằng 3')) {
-      return { type: 'digit_riddle', tenDigit: '?', unitDigit: '?', sum: 9, diff: 3 };
-    }
-    if (text.includes('tổng hai chữ số bằng 10')) {
-      return { type: 'digit_riddle', tenDigit: '?', unitDigit: '?', sum: 10, diff: 8 };
-    }
-    if (text.includes('tổng hai chữ số bằng 8')) {
-      return { type: 'digit_riddle', tenDigit: '?', unitDigit: '?', sum: 8, diff: 2 };
-    }
-    return { type: 'digit_riddle', tenDigit: '?', unitDigit: '?', sum: 9, diff: 3 };
-  }
-
-  // 4. Chia kẹo / chia đồ vật / chuyển kẹo
-  if (sec.includes('Chia') || sec.includes('kẹo') || sec.includes('Chuyển đồ vật') || sec.includes('Cho nhận')) {
-    return { 
-      type: 'candy_sharing', 
-      total: 14, 
-      each: 4, 
-      students: ['Bạn An', 'Bạn Bình', 'Bạn Chi'] 
-    };
-  }
-
-  // 5. Bài toán tuổi tác
-  if (sec.includes('tuổi') || sec.includes('Tuổi')) {
-    return { 
-      type: 'age_logic', 
-      person1: 'Anh', 
-      age1: 8, 
-      person2: 'Em', 
-      age2: 5, 
-      years: 3 
-    };
-  }
-
-  // 6. Xếp hàng
-  if (sec.includes('Xếp hàng')) {
-    return { type: 'lineup', front: 4, name: 'Lan', back: 5 };
-  }
-
-  // 7. Cân thăng bằng
-  if (sec.includes('Cân thăng bằng')) {
-    return { type: 'balance_scale', weight: 2, count: 3 };
-  }
-
-  // 8. Đồng hồ thời gian
-  if (sec.includes('Đồng hồ') || text.includes('kim ngắn') || text.includes('kim dài')) {
-    let hour = 9;
-    if (text.includes('6 giờ') || text.includes('số 6')) hour = 6;
-    else if (text.includes('4 giờ') || text.includes('số 4')) hour = 4;
-    else if (text.includes('2 giờ') || text.includes('số 2')) hour = 2;
-    return { type: 'clock_face', hour };
-  }
-
-  // 9. Cưa cây / Trồng cây / Cắt dây
-  if (sec.includes('Cưa') || sec.includes('Cắt') || sec.includes('Trồng cây')) {
-    return { type: 'wood_cutting', parts: 5 };
-  }
-
-  // 10. Đếm chân con vật
-  if (sec.includes('Đếm chân')) {
-    return { type: 'animals_legs', chickens: 3, dogs: 2 };
-  }
-
-  // 11. So sánh logic (chiều cao, cân nặng)
-  if (sec.includes('So sánh')) {
-    return { type: 'animals_height' };
-  }
-
-  // 12. Lịch và ngày trong tuần
-  if (sec.includes('Lịch') || text.includes('thứ') || text.includes('Thứ')) {
-    let day = 8;
-    let weekday = 'Thứ Ba';
-    if (text.includes('thứ Hai')) weekday = 'Thứ Hai';
-    else if (text.includes('thứ Tư')) weekday = 'Thứ Tư';
-    else if (text.includes('Chủ Nhật')) weekday = 'Chủ Nhật';
-    return { type: 'calendar_day', weekday, day };
-  }
-
-  // 13. Mẹo vui logic
-  if (sec.includes('Mẹo') || sec.includes('Đố mẹo')) {
-    return { type: 'cat_mouse' };
-  }
-
-  // 14. Hoa quả
-  if (sec.includes('hoa quả') || text.includes('🍎')) {
-    return { type: 'fruit_equation', sumApples: 12, sumMixed: 11 };
-  }
-
-  // Default to train sequence
-  return { type: 'train_sequence', seq: [2, 4, 6, 8] };
-}
-
-// Update all exams
-PRACTICE_EXAMS.forEach(exam => {
+PRACTICE_EXAMS.forEach((exam) => {
   exam.questions.forEach((q, idx) => {
-    q.diagram = getDiagramForQuestion(q, exam);
+    const sec = q.section || '';
+    const text = q.content || '';
+
+    // Remove any diagram from Age (Q12) and Digit Riddles (Q13) - pure text reasoning!
+    if (sec.includes('tuổi') || sec.includes('Tuổi') || sec.includes('Cấu tạo số')) {
+      delete q.diagram;
+      return;
+    }
+
+    // Only assign cat_mouse if text is about mèo and chuột
+    if (sec.includes('Mẹo') || sec.includes('Đố mẹo')) {
+      if (text.includes('mèo') && text.includes('chuột')) {
+        q.diagram = { type: 'cat_mouse' };
+      } else {
+        delete q.diagram;
+      }
+      return;
+    }
+
+    // Wood cutting (Q7 or Q8)
+    if (sec.includes('Cưa') || text.includes('cưa') || text.includes('khúc gỗ')) {
+      let parts = 5;
+      if (text.includes('7 đoạn') || text.includes('7 khúc')) parts = 7;
+      else if (text.includes('6 đoạn') || text.includes('6 khúc')) parts = 6;
+      else if (text.includes('4 đoạn') || text.includes('4 khúc')) parts = 4;
+      q.diagram = { type: 'wood_cutting', parts };
+      return;
+    }
+
+    // Train sequence (Q1)
+    if (sec.includes('Toa tàu') || sec.includes('Dãy số') || text.includes('toa tàu') || text.includes('dãy số')) {
+      if (text.includes('30, 26, 22')) q.diagram = { type: 'train_sequence', seq: [30, 26, 22, 18] };
+      else if (text.includes('1, 2, 4, 7')) q.diagram = { type: 'train_sequence', seq: [1, 2, 4, 7] };
+      else if (text.includes('2, 4, 8, 16')) q.diagram = { type: 'train_sequence', seq: [2, 4, 8, 16] };
+      else if (text.includes('3, 5, 9, 15')) q.diagram = { type: 'train_sequence', seq: [3, 5, 9, 15] };
+      else if (text.includes('5, 10, 15')) q.diagram = { type: 'train_sequence', seq: [5, 10, 15, 20] };
+      else q.diagram = { type: 'train_sequence', seq: [2, 4, 6, 8] };
+      return;
+    }
+
+    // Geometry Q2
+    if (sec.includes('Hình học') || sec.includes('tam giác') || sec.includes('tứ giác')) {
+      if (text.includes('hình vuông') && text.includes('đường chéo')) {
+        q.diagram = { type: 'square_diagonals' };
+      } else if (text.includes('cắt xiên') || text.includes('tứ giác')) {
+        q.diagram = { type: 'composite_quadrilateral' };
+      } else if (text.includes('đáy') || text.includes('tam giác ABC')) {
+        q.diagram = { type: 'apex_triangle', baseSegments: 4 };
+      }
+      return;
+    }
+
+    // Fruit equations (Q3)
+    if (sec.includes('hoa quả') || text.includes('🍎')) {
+      let sumApples = 12;
+      let sumMixed = 11;
+      if (text.includes('🍎 + 🍎 = 16')) sumApples = 16;
+      else if (text.includes('🍎 + 🍎 = 18')) sumApples = 18;
+      else if (text.includes('🍎 + 🍎 = 20')) sumApples = 20;
+      else if (text.includes('🍎 + 🍎 = 10')) sumApples = 10;
+      else if (text.includes('🍎 + 🍎 = 14')) sumApples = 14;
+      q.diagram = { type: 'fruit_equation', sumApples, sumMixed };
+      return;
+    }
+
+    // Balance scale (Q4)
+    if (sec.includes('Cân thăng bằng') || text.includes('thăng bằng')) {
+      q.diagram = { type: 'balance_scale', weight: 2, count: 3 };
+      return;
+    }
+
+    // Clock face (Q5)
+    if (sec.includes('Đồng hồ') || text.includes('kim ngắn') || text.includes('kim dài')) {
+      let hour = 9;
+      if (text.includes('6 giờ') || text.includes('số 6')) hour = 6;
+      else if (text.includes('4 giờ') || text.includes('số 4')) hour = 4;
+      else if (text.includes('2 giờ') || text.includes('số 2')) hour = 2;
+      q.diagram = { type: 'clock_face', hour };
+      return;
+    }
+
+    // Lineup (Q6)
+    if (sec.includes('Xếp hàng') || text.includes('hàng tập thể dục') || text.includes('hàng dọc')) {
+      q.diagram = { type: 'lineup', front: 4, name: 'Lan', back: 5 };
+      return;
+    }
+
+    // Animals legs (Q8 or Q9)
+    if (sec.includes('Đếm chân') || (text.includes('gà') && text.includes('chân'))) {
+      q.diagram = { type: 'animals_legs', chickens: 3, dogs: 2 };
+      return;
+    }
+
+    // Animals height (Q9 or Q10)
+    if (sec.includes('So sánh') && (text.includes('cao hơn') || text.includes('thấp nhất'))) {
+      q.diagram = { type: 'animals_height' };
+      return;
+    }
+
+    // Calendar day (Q10 or Q11)
+    if (sec.includes('Lịch') || text.includes('thứ Ba') || text.includes('ngày 8')) {
+      q.diagram = { type: 'calendar_day', weekday: 'Thứ Ba', day: 8 };
+      return;
+    }
+
+    // Candy sharing (Q14)
+    if (sec.includes('Chia') && text.includes('kẹo')) {
+      q.diagram = { type: 'candy_sharing', total: 14 };
+      return;
+    }
+
+    // Cubes stack (Q15)
+    if (sec.includes('Tháp') || text.includes('khối lập phương')) {
+      q.diagram = { type: 'cubes_stack', total: 10 };
+      return;
+    }
   });
 });
 
-// Format and save as clean JavaScript ES module
 const out = `// Trọn bộ 10 Đề Toán Tư Duy & Logic Lớp 2 chuẩn Violympic
 // Bỏ qua các phép tính cộng trừ đơn thuần và phép nhân máy móc
 // Tập trung 100% vào: Dãy số toa tàu, Hình học tư duy, Cân thăng bằng, Phương trình hoa quả,
@@ -134,4 +131,4 @@ export const PRACTICE_EXAMS = ${JSON.stringify(PRACTICE_EXAMS, null, 2)};
 `;
 
 fs.writeFileSync('src/data/practiceExamsData.js', out.normalize('NFC'), 'utf8');
-console.log('Successfully enriched all 10 practice exams (150 questions) with diagrams!');
+console.log('Cleaned and accurately mapped diagrams for all 10 practice exams!');

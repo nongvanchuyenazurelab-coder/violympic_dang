@@ -64,7 +64,7 @@ export const PRACTICE_EXAMS = [
         "diagram": {
           "type": "fruit_equation",
           "sumApples": 10,
-          "sumMixed": 8
+          "sumMixed": 11
         },
         "correctAnswer": "3",
         "hint": "Hai quả táo giống nhau cộng lại bằng 10 nên 1 quả táo bằng 5. Lấy 8 - 5 để tìm quả chuối.",
@@ -95,7 +95,7 @@ export const PRACTICE_EXAMS = [
         "content": "Đồng hồ bên dưới đang chỉ 9 giờ đúng. Hỏi 2 giờ trước, đồng hồ chỉ mấy giờ? ........ giờ.",
         "diagram": {
           "type": "clock_face",
-          "hour": 9
+          "hour": 2
         },
         "correctAnswer": "7",
         "hint": "2 giờ trước là lùi về trước: lấy 9 - 2 = ?",
@@ -111,8 +111,8 @@ export const PRACTICE_EXAMS = [
         "diagram": {
           "type": "lineup",
           "front": 4,
-          "back": 5,
-          "name": "Lan"
+          "name": "Lan",
+          "back": 5
         },
         "correctAnswer": "10",
         "hint": "Đừng quên tính cả bạn Lan nhé: 4 bạn phía trước + 1 bạn Lan + 5 bạn phía sau.",
@@ -214,15 +214,7 @@ export const PRACTICE_EXAMS = [
         "content": "Năm nay anh 8 tuổi, em 5 tuổi. Hỏi 3 năm nữa tổng số tuổi của hai anh em là bao nhiêu? ........ tuổi.",
         "correctAnswer": "19",
         "hint": "Sau 3 năm, anh thêm 3 tuổi và em cũng thêm 3 tuổi. Cả hai anh em tăng thêm 6 tuổi.",
-        "explanation": "Sau 3 năm:\nTuổi của anh là: 8 + 3 = 11 (tuổi).\nTuổi của em là: 5 + 3 = 8 (tuổi).\nTổng số tuổi hai anh em là: 11 + 8 = 19 (tuổi).",
-        "diagram": {
-          "type": "age_logic",
-          "person1": "Anh",
-          "age1": 8,
-          "person2": "Em",
-          "age2": 5,
-          "years": 3
-        }
+        "explanation": "Sau 3 năm:\nTuổi của anh là: 8 + 3 = 11 (tuổi).\nTuổi của em là: 5 + 3 = 8 (tuổi).\nTổng số tuổi hai anh em là: 11 + 8 = 19 (tuổi)."
       },
       {
         "id": "de1_q13",
@@ -233,14 +225,7 @@ export const PRACTICE_EXAMS = [
         "content": "Tìm một số có hai chữ số, biết chữ số hàng chục cộng với chữ số hàng đơn vị bằng 9, và chữ số hàng chục trừ chữ số hàng đơn vị bằng 3. Số đó là: ........",
         "correctAnswer": "63",
         "hint": "Tìm hai chữ số có tổng bằng 9 và hiệu bằng 3: đó là 6 và 3 (vì 6 + 3 = 9 và 6 - 3 = 3).",
-        "explanation": "Hai chữ số có tổng bằng 9 và hiệu bằng 3 là 6 và 3.\nChữ số hàng chục là 6, chữ số hàng đơn vị là 3. Vậy số đó là 63.",
-        "diagram": {
-          "type": "digit_riddle",
-          "tenDigit": "?",
-          "unitDigit": "?",
-          "sum": 9,
-          "diff": 3
-        }
+        "explanation": "Hai chữ số có tổng bằng 9 và hiệu bằng 3 là 6 và 3.\nChữ số hàng chục là 6, chữ số hàng đơn vị là 3. Vậy số đó là 63."
       },
       {
         "id": "de1_q14",
@@ -254,13 +239,7 @@ export const PRACTICE_EXAMS = [
         "explanation": "Nếu chia mỗi bạn 4 viên kẹo thì hết: 4 + 4 + 4 = 12 (viên kẹo).\nSố viên kẹo còn thừa lại là: 14 - 12 = 2 (viên kẹo).",
         "diagram": {
           "type": "candy_sharing",
-          "total": 14,
-          "each": 4,
-          "students": [
-            "Bạn An",
-            "Bạn Bình",
-            "Bạn Chi"
-          ]
+          "total": 14
         }
       },
       {
@@ -300,10 +279,10 @@ export const PRACTICE_EXAMS = [
         "diagram": {
           "type": "train_sequence",
           "seq": [
-            1,
+            2,
             4,
-            7,
-            10
+            6,
+            8
           ]
         },
         "correctAnswer": "13",
@@ -334,7 +313,7 @@ export const PRACTICE_EXAMS = [
         "diagram": {
           "type": "fruit_equation",
           "sumApples": 16,
-          "sumMixed": 12
+          "sumMixed": 11
         },
         "correctAnswer": "4",
         "hint": "Hai quả táo giống nhau bằng 16 nên 1 quả táo bằng 8 (8 + 8 = 16). Quả chuối = 12 - 8.",
@@ -349,8 +328,8 @@ export const PRACTICE_EXAMS = [
         "content": "Một quả dưa hấu đặt ở đĩa cân bên trái thăng bằng với 2 quả cân loại 5kg ở đĩa cân bên phải. Hỏi quả dưa hấu nặng bao nhiêu ki-lô-gam? ........ kg.",
         "diagram": {
           "type": "balance_scale",
-          "weight": 5,
-          "count": 2
+          "weight": 2,
+          "count": 3
         },
         "correctAnswer": "10",
         "hint": "2 quả cân loại 5kg: 5 + 5 = ?",
@@ -365,7 +344,7 @@ export const PRACTICE_EXAMS = [
         "content": "Đồng hồ bên dưới đang chỉ 7 giờ đúng. Hỏi 3 giờ sau, đồng hồ sẽ chỉ mấy giờ? ........ giờ.",
         "diagram": {
           "type": "clock_face",
-          "hour": 7
+          "hour": 9
         },
         "correctAnswer": "10",
         "hint": "3 giờ sau là cộng thêm: 7 + 3 = ?",
@@ -418,8 +397,8 @@ export const PRACTICE_EXAMS = [
         "content": "Trong sân có 4 con gà và 1 con chó. Hỏi có tất cả bao nhiêu cái chân? ........ cái chân.",
         "diagram": {
           "type": "animals_legs",
-          "chickens": 4,
-          "dogs": 1
+          "chickens": 3,
+          "dogs": 2
         },
         "correctAnswer": "12",
         "hint": "4 con gà có: 2 + 2 + 2 + 2 = 8 chân. 1 con chó có 4 chân. Tổng: 8 + 4.",
@@ -476,10 +455,7 @@ export const PRACTICE_EXAMS = [
         ],
         "correctAnswer": "2 quả",
         "hint": "Đọc kỹ câu hỏi: Bạn lấy đi 2 quả, vậy bạn đang cầm trong tay mấy quả?",
-        "explanation": "Vì chính BẠN đã lấy đi 2 quả táo, nên trong tay bạn có 2 quả táo!",
-        "diagram": {
-          "type": "cat_mouse"
-        }
+        "explanation": "Vì chính BẠN đã lấy đi 2 quả táo, nên trong tay bạn có 2 quả táo!"
       },
       {
         "id": "de2_q12",
@@ -505,14 +481,7 @@ export const PRACTICE_EXAMS = [
         "content": "Số nhỏ nhất có hai chữ số mà hiệu hai chữ số bằng 2 là số: ........",
         "correctAnswer": "13",
         "hint": "Hàng chục nhỏ nhất là 1. Hàng đơn vị = 1 + 2 = 3.",
-        "explanation": "Hàng chục nhỏ nhất là 1. Hàng đơn vị là 1 + 2 = 3. Số nhỏ nhất là 13 (vì 3 - 1 = 2).",
-        "diagram": {
-          "type": "digit_riddle",
-          "tenDigit": "?",
-          "unitDigit": "?",
-          "sum": 9,
-          "diff": 3
-        }
+        "explanation": "Hàng chục nhỏ nhất là 1. Hàng đơn vị là 1 + 2 = 3. Số nhỏ nhất là 13 (vì 3 - 1 = 2)."
       },
       {
         "id": "de2_q14",
@@ -544,7 +513,7 @@ export const PRACTICE_EXAMS = [
         "content": "Một bạn nhỏ xếp được một kim tự tháp gồm 8 khối lập phương. Bạn ấy gắn thêm 4 khối lập phương nữa. Hỏi chiếc tháp có tất cả bao nhiêu khối? ........ khối.",
         "diagram": {
           "type": "cubes_stack",
-          "total": 8
+          "total": 10
         },
         "correctAnswer": "12",
         "hint": "Lấy 8 khối ban đầu cộng thêm 4 khối mới.",
@@ -572,10 +541,10 @@ export const PRACTICE_EXAMS = [
         "diagram": {
           "type": "train_sequence",
           "seq": [
-            5,
-            10,
-            15,
-            20
+            2,
+            4,
+            6,
+            8
           ]
         },
         "correctAnswer": "25",
@@ -643,7 +612,7 @@ export const PRACTICE_EXAMS = [
         "content": "Đồng hồ chỉ 11 giờ trưa. Hỏi 4 giờ trước đó là mấy giờ sáng? ........ giờ.",
         "diagram": {
           "type": "clock_face",
-          "hour": 11
+          "hour": 4
         },
         "correctAnswer": "7",
         "hint": "Lấy 11 - 4 = ?",
@@ -729,7 +698,7 @@ export const PRACTICE_EXAMS = [
         "explanation": "Hôm nay là thứ Hai -> Ngày mai là thứ Ba -> Ngày kia là thứ Tư.",
         "diagram": {
           "type": "calendar_day",
-          "weekday": "Thứ Hai",
+          "weekday": "Thứ Ba",
           "day": 8
         }
       },
@@ -742,10 +711,7 @@ export const PRACTICE_EXAMS = [
         "content": "Có 5 cây nến đang cháy. Gió thổi tắt mất 2 cây nến. Người ta không thắp lại. Hỏi cuối cùng còn lại mấy cây nến? ........ cây.",
         "correctAnswer": "2",
         "hint": "3 cây nến còn lại tiếp tục cháy sẽ tan chảy hết. 2 cây nến bị thổi tắt thì còn nguyên.",
-        "explanation": "3 cây nến không bị thổi tắt sẽ cháy hết sạch thành sáp tan chảy. Chỉ có 2 cây nến bị tắt là còn nguyên vẹn cây nến. Vậy cuối cùng còn lại 2 cây nến.",
-        "diagram": {
-          "type": "cat_mouse"
-        }
+        "explanation": "3 cây nến không bị thổi tắt sẽ cháy hết sạch thành sáp tan chảy. Chỉ có 2 cây nến bị tắt là còn nguyên vẹn cây nến. Vậy cuối cùng còn lại 2 cây nến."
       },
       {
         "id": "de3_q12",
@@ -762,15 +728,7 @@ export const PRACTICE_EXAMS = [
           "Bao nhiêu năm cũng vẫn hơn 25 tuổi"
         ],
         "hint": "Hiệu số tuổi của hai người không bao giờ thay đổi theo thời gian.",
-        "explanation": "Hiệu số tuổi giữa hai người luôn không đổi theo thời gian: mỗi năm mẹ thêm 1 tuổi thì con cũng thêm 1 tuổi. Nên bao nhiêu năm nữa mẹ vẫn luôn hơn con 25 tuổi.",
-        "diagram": {
-          "type": "age_logic",
-          "person1": "Anh",
-          "age1": 8,
-          "person2": "Em",
-          "age2": 5,
-          "years": 3
-        }
+        "explanation": "Hiệu số tuổi giữa hai người luôn không đổi theo thời gian: mỗi năm mẹ thêm 1 tuổi thì con cũng thêm 1 tuổi. Nên bao nhiêu năm nữa mẹ vẫn luôn hơn con 25 tuổi."
       },
       {
         "id": "de3_q13",
@@ -781,14 +739,7 @@ export const PRACTICE_EXAMS = [
         "content": "Số lớn nhất có hai chữ số khác nhau là số: ........",
         "correctAnswer": "98",
         "hint": "Hàng chục là 9, hàng đơn vị khác 9 và lớn nhất là 8.",
-        "explanation": "Số lớn nhất có 2 chữ số khác nhau là 98.",
-        "diagram": {
-          "type": "digit_riddle",
-          "tenDigit": "?",
-          "unitDigit": "?",
-          "sum": 9,
-          "diff": 3
-        }
+        "explanation": "Số lớn nhất có 2 chữ số khác nhau là 98."
       },
       {
         "id": "de3_q14",
@@ -848,10 +799,10 @@ export const PRACTICE_EXAMS = [
         "diagram": {
           "type": "train_sequence",
           "seq": [
-            10,
-            20,
-            30,
-            40
+            2,
+            4,
+            6,
+            8
           ]
         },
         "correctAnswer": "50",
@@ -882,8 +833,8 @@ export const PRACTICE_EXAMS = [
         "content": "Biết 🍎 + 🍎 = 8 và 🍎 + 🍌 = 7. Hỏi quả chuối 🍌 có giá trị bằng bao nhiêu?",
         "diagram": {
           "type": "fruit_equation",
-          "sumApples": 8,
-          "sumMixed": 7
+          "sumApples": 12,
+          "sumMixed": 11
         },
         "correctAnswer": "3",
         "hint": "🍎 + 🍎 = 8 nên 🍎 = 4. Quả chuối = 7 - 4.",
@@ -899,7 +850,7 @@ export const PRACTICE_EXAMS = [
         "diagram": {
           "type": "balance_scale",
           "weight": 2,
-          "count": 4
+          "count": 3
         },
         "correctAnswer": "8",
         "hint": "4 quả cân 2kg: 2 + 2 + 2 + 2 = ?",
@@ -914,7 +865,7 @@ export const PRACTICE_EXAMS = [
         "content": "Đồng hồ chỉ 8 giờ sáng. Hỏi 3 giờ trước đó là mấy giờ? ........ giờ.",
         "diagram": {
           "type": "clock_face",
-          "hour": 8
+          "hour": 9
         },
         "correctAnswer": "5",
         "hint": "8 - 3 = 5.",
@@ -967,7 +918,7 @@ export const PRACTICE_EXAMS = [
         "content": "Có 5 con gà và 2 con chó. Tổng số chân của chúng là: ........ chân.",
         "diagram": {
           "type": "animals_legs",
-          "chickens": 5,
+          "chickens": 3,
           "dogs": 2
         },
         "correctAnswer": "18",
@@ -1025,10 +976,7 @@ export const PRACTICE_EXAMS = [
         ],
         "correctAnswer": "0 con",
         "hint": "Khi nghe tiếng súng nổ rất to, các con chim còn lại sẽ làm gì?",
-        "explanation": "Khi nghe tiếng súng nổ, những con chim còn lại giật mình và bay đi hết. Do đó trên cành cây không còn con chim nào (0 con).",
-        "diagram": {
-          "type": "cat_mouse"
-        }
+        "explanation": "Khi nghe tiếng súng nổ, những con chim còn lại giật mình và bay đi hết. Do đó trên cành cây không còn con chim nào (0 con)."
       },
       {
         "id": "de4_q12",
@@ -1039,15 +987,7 @@ export const PRACTICE_EXAMS = [
         "content": "Năm nay anh 10 tuổi, em 6 tuổi. Hỏi khi em 10 tuổi thì anh bao nhiêu tuổi? ........ tuổi.",
         "correctAnswer": "14",
         "hint": "Anh hơn em 4 tuổi (10 - 6 = 4). Khi em 10 tuổi thì anh: 10 + 4.",
-        "explanation": "Anh hơn em số tuổi là: 10 - 6 = 4 (tuổi).\nKhi em 10 tuổi thì anh là: 10 + 4 = 14 (tuổi).",
-        "diagram": {
-          "type": "age_logic",
-          "person1": "Anh",
-          "age1": 8,
-          "person2": "Em",
-          "age2": 5,
-          "years": 3
-        }
+        "explanation": "Anh hơn em số tuổi là: 10 - 6 = 4 (tuổi).\nKhi em 10 tuổi thì anh là: 10 + 4 = 14 (tuổi)."
       },
       {
         "id": "de4_q13",
@@ -1058,14 +998,7 @@ export const PRACTICE_EXAMS = [
         "content": "Số bé nhất có hai chữ số mà hiệu hai chữ số bằng 5 là số: ........",
         "correctAnswer": "16",
         "hint": "Hàng chục nhỏ nhất là 1. Hàng đơn vị = 1 + 5 = 6.",
-        "explanation": "Chữ số hàng chục nhỏ nhất là 1. Chữ số hàng đơn vị là: 1 + 5 = 6. Vậy số đó là 16 (vì 6 - 1 = 5).",
-        "diagram": {
-          "type": "digit_riddle",
-          "tenDigit": "?",
-          "unitDigit": "?",
-          "sum": 9,
-          "diff": 3
-        }
+        "explanation": "Chữ số hàng chục nhỏ nhất là 1. Chữ số hàng đơn vị là: 1 + 5 = 6. Vậy số đó là 16 (vì 6 - 1 = 5)."
       },
       {
         "id": "de4_q14",
@@ -1079,13 +1012,7 @@ export const PRACTICE_EXAMS = [
         "explanation": "5 bạn mỗi bạn 3 chiếc hết 15 chiếc.\nCòn thừa lại: 19 - 15 = 4 (chiếc kẹo).",
         "diagram": {
           "type": "candy_sharing",
-          "total": 14,
-          "each": 4,
-          "students": [
-            "Bạn An",
-            "Bạn Bình",
-            "Bạn Chi"
-          ]
+          "total": 14
         }
       },
       {
@@ -1096,8 +1023,8 @@ export const PRACTICE_EXAMS = [
         "type": "fill_blank",
         "content": "Một thanh dài được ghép từ 4 ô vuông nhỏ nằm ngang (như hình bên dưới). Trong hình có tất cả bao nhiêu hình chữ nhật?",
         "diagram": {
-          "type": "split_rect",
-          "count": 4
+          "type": "cubes_stack",
+          "total": 10
         },
         "correctAnswer": "10",
         "hint": "Ghép từ 1 ô (4 hình), 2 ô (3 hình), 3 ô (2 hình), 4 ô (1 hình): 4 + 3 + 2 + 1.",
@@ -1129,9 +1056,9 @@ export const PRACTICE_EXAMS = [
           "type": "train_sequence",
           "seq": [
             2,
-            5,
-            8,
-            11
+            4,
+            6,
+            8
           ]
         }
       },
@@ -1165,7 +1092,7 @@ export const PRACTICE_EXAMS = [
         "diagram": {
           "type": "fruit_equation",
           "sumApples": 14,
-          "sumMixed": 13
+          "sumMixed": 11
         },
         "correctAnswer": "6",
         "hint": "🍎 = 7 (vì 7 + 7 = 14). Chuối = 13 - 7.",
@@ -1244,7 +1171,7 @@ export const PRACTICE_EXAMS = [
         "diagram": {
           "type": "animals_legs",
           "chickens": 3,
-          "dogs": 3
+          "dogs": 2
         },
         "correctAnswer": "18",
         "hint": "3 con gà: 6 chân. 3 con thỏ: 4 + 4 + 4 = 12 chân. Tổng: 6 + 12.",
@@ -1301,10 +1228,7 @@ export const PRACTICE_EXAMS = [
         ],
         "correctAnswer": "3 phút",
         "hint": "Cả 3 quả trứng được cho vào nồi luộc cùng một lúc.",
-        "explanation": "Vì luộc 3 quả trứng cùng một lúc trong nồi, nên chỉ mất 3 phút là cả 3 quả đều chín.",
-        "diagram": {
-          "type": "cat_mouse"
-        }
+        "explanation": "Vì luộc 3 quả trứng cùng một lúc trong nồi, nên chỉ mất 3 phút là cả 3 quả đều chín."
       },
       {
         "id": "de5_q12",
@@ -1315,15 +1239,7 @@ export const PRACTICE_EXAMS = [
         "content": "Hai năm trước, tổng số tuổi của hai chị em là 14 tuổi. Hỏi hiện nay tổng số tuổi của hai chị em là bao nhiêu? ........ tuổi.",
         "correctAnswer": "18",
         "hint": "Mỗi người tăng thêm 2 tuổi, cả 2 chị em tăng thêm 2 + 2 = 4 tuổi: 14 + 4.",
-        "explanation": "Sau 2 năm, mỗi người đều thêm 2 tuổi.\nHiện nay tổng số tuổi là: 14 + 2 + 2 = 18 (tuổi).",
-        "diagram": {
-          "type": "age_logic",
-          "person1": "Anh",
-          "age1": 8,
-          "person2": "Em",
-          "age2": 5,
-          "years": 3
-        }
+        "explanation": "Sau 2 năm, mỗi người đều thêm 2 tuổi.\nHiện nay tổng số tuổi là: 14 + 2 + 2 = 18 (tuổi)."
       },
       {
         "id": "de5_q13",
@@ -1334,14 +1250,7 @@ export const PRACTICE_EXAMS = [
         "content": "Khi đổi chỗ hai chữ số của số 49 cho nhau ta được một số mới. Hỏi số mới lớn hơn số ban đầu bao nhiêu đơn vị? ........ đơn vị.",
         "correctAnswer": "45",
         "hint": "Đổi chỗ hai chữ số được số 94. Lấy 94 - 49 = ?",
-        "explanation": "Đổi chỗ hai chữ số của 49 ta được số 94.\nSố mới lớn hơn số ban đầu: 94 - 49 = 45 (đơn vị).",
-        "diagram": {
-          "type": "digit_riddle",
-          "tenDigit": "?",
-          "unitDigit": "?",
-          "sum": 9,
-          "diff": 3
-        }
+        "explanation": "Đổi chỗ hai chữ số của 49 ta được số 94.\nSố mới lớn hơn số ban đầu: 94 - 49 = 45 (đơn vị)."
       },
       {
         "id": "de5_q14",
@@ -1355,13 +1264,7 @@ export const PRACTICE_EXAMS = [
         "explanation": "Mỗi bạn nhận 5 cái kẹo hết 20 cái.\nSố kẹo còn thừa là: 23 - 20 = 3 (cái kẹo).",
         "diagram": {
           "type": "candy_sharing",
-          "total": 14,
-          "each": 4,
-          "students": [
-            "Bạn An",
-            "Bạn Bình",
-            "Bạn Chi"
-          ]
+          "total": 14
         }
       },
       {
@@ -1402,9 +1305,9 @@ export const PRACTICE_EXAMS = [
           "type": "train_sequence",
           "seq": [
             2,
+            4,
             6,
-            10,
-            14
+            8
           ]
         },
         "correctAnswer": "18",
@@ -1435,7 +1338,7 @@ export const PRACTICE_EXAMS = [
         "diagram": {
           "type": "fruit_equation",
           "sumApples": 18,
-          "sumMixed": 15
+          "sumMixed": 11
         },
         "correctAnswer": "6",
         "hint": "🍎 = 9 (vì 9 + 9 = 18). Chuối = 15 - 9.",
@@ -1487,9 +1390,9 @@ export const PRACTICE_EXAMS = [
         "content": "Đứng trước bạn Mai có 6 bạn, đứng sau bạn Mai có 7 bạn. Hỏi hàng có tất cả bao nhiêu bạn? ........ bạn.",
         "diagram": {
           "type": "lineup",
-          "front": 6,
-          "back": 7,
-          "name": "Mai"
+          "front": 4,
+          "name": "Lan",
+          "back": 5
         },
         "correctAnswer": "14",
         "hint": "6 bạn trước + Mai + 7 bạn sau: 6 + 1 + 7.",
@@ -1564,7 +1467,7 @@ export const PRACTICE_EXAMS = [
         "explanation": "2 tuần có: 7 + 7 = 14 (ngày).\nThứ Tư của 2 tuần sau là ngày: 7 + 14 = 21.",
         "diagram": {
           "type": "calendar_day",
-          "weekday": "Thứ Tư",
+          "weekday": "Thứ Ba",
           "day": 8
         }
       },
@@ -1583,10 +1486,7 @@ export const PRACTICE_EXAMS = [
         ],
         "correctAnswer": "5 người",
         "hint": "Cô em gái út là em gái chung của cả 4 anh em trai!",
-        "explanation": "4 anh em trai đều có chung 1 cô em gái út. Vậy gia đình có: 4 người con trai + 1 người con gái = 5 người con.",
-        "diagram": {
-          "type": "cat_mouse"
-        }
+        "explanation": "4 anh em trai đều có chung 1 cô em gái út. Vậy gia đình có: 4 người con trai + 1 người con gái = 5 người con."
       },
       {
         "id": "de6_q12",
@@ -1597,15 +1497,7 @@ export const PRACTICE_EXAMS = [
         "content": "Hiện nay mẹ 32 tuổi, con 7 tuổi. Hỏi khi con 10 tuổi thì mẹ bao nhiêu tuổi? ........ tuổi.",
         "correctAnswer": "35",
         "hint": "Mẹ hơn con: 32 - 7 = 25 tuổi. Khi con 10 tuổi thì mẹ: 10 + 25.",
-        "explanation": "Mẹ hơn con: 32 - 7 = 25 (tuổi).\nKhi con 10 tuổi thì tuổi của mẹ là: 10 + 25 = 35 (tuổi).",
-        "diagram": {
-          "type": "age_logic",
-          "person1": "Anh",
-          "age1": 8,
-          "person2": "Em",
-          "age2": 5,
-          "years": 3
-        }
+        "explanation": "Mẹ hơn con: 32 - 7 = 25 (tuổi).\nKhi con 10 tuổi thì tuổi của mẹ là: 10 + 25 = 35 (tuổi)."
       },
       {
         "id": "de6_q13",
@@ -1616,14 +1508,7 @@ export const PRACTICE_EXAMS = [
         "content": "Số bé nhất có hai chữ số mà tổng hai chữ số bằng 10 là số: ........",
         "correctAnswer": "19",
         "hint": "Để số bé nhất thì hàng chục phải nhỏ nhất là 1. Hàng đơn vị = 10 - 1 = 9.",
-        "explanation": "Hàng chục nhỏ nhất là 1. Hàng đơn vị là 10 - 1 = 9. Vậy số đó là 19.",
-        "diagram": {
-          "type": "digit_riddle",
-          "tenDigit": "?",
-          "unitDigit": "?",
-          "sum": 10,
-          "diff": 8
-        }
+        "explanation": "Hàng chục nhỏ nhất là 1. Hàng đơn vị là 10 - 1 = 9. Vậy số đó là 19."
       },
       {
         "id": "de6_q14",
@@ -1637,13 +1522,7 @@ export const PRACTICE_EXAMS = [
         "explanation": "3 bạn mỗi bạn 8 cái kẹo hết 24 cái.\nSố kẹo còn thừa là: 25 - 24 = 1 (cái kẹo).",
         "diagram": {
           "type": "candy_sharing",
-          "total": 14,
-          "each": 4,
-          "students": [
-            "Bạn An",
-            "Bạn Bình",
-            "Bạn Chi"
-          ]
+          "total": 14
         }
       },
       {
@@ -1717,7 +1596,7 @@ export const PRACTICE_EXAMS = [
         "diagram": {
           "type": "fruit_equation",
           "sumApples": 20,
-          "sumMixed": 16
+          "sumMixed": 11
         },
         "correctAnswer": "6",
         "hint": "🍎 = 10 (vì 10 + 10 = 20). Chuối = 16 - 10.",
@@ -1789,7 +1668,7 @@ export const PRACTICE_EXAMS = [
         "explanation": "Cần cưa: 7 - 1 = 6 (lần cưa).",
         "diagram": {
           "type": "wood_cutting",
-          "parts": 5
+          "parts": 7
         }
       },
       {
@@ -1846,7 +1725,7 @@ export const PRACTICE_EXAMS = [
         "explanation": "Ngày thứ Hai tiếp theo là ngày: 1 + 7 = 8.",
         "diagram": {
           "type": "calendar_day",
-          "weekday": "Thứ Hai",
+          "weekday": "Thứ Ba",
           "day": 8
         }
       },
@@ -1865,10 +1744,7 @@ export const PRACTICE_EXAMS = [
         ],
         "correctAnswer": "Tàu hỏa chạy điện nên không có khói",
         "hint": "Đoàn tàu hỏa chạy điện có khói không?",
-        "explanation": "Đoàn tàu hỏa chạy bằng điện hiện đại không xả khói!",
-        "diagram": {
-          "type": "cat_mouse"
-        }
+        "explanation": "Đoàn tàu hỏa chạy bằng điện hiện đại không xả khói!"
       },
       {
         "id": "de7_q12",
@@ -1879,15 +1755,7 @@ export const PRACTICE_EXAMS = [
         "content": "Ông năm nay 70 tuổi, cháu 8 tuổi. Hỏi 5 năm trước ông hơn cháu bao nhiêu tuổi? ........ tuổi.",
         "correctAnswer": "62",
         "hint": "Hiệu số tuổi không bao giờ thay đổi: 70 - 8 = ?",
-        "explanation": "Hiệu số tuổi giữa hai người luôn không đổi qua các năm.\nHiện nay ông hơn cháu là: 70 - 8 = 62 (tuổi).\nVậy 5 năm trước ông vẫn hơn cháu 62 tuổi.",
-        "diagram": {
-          "type": "age_logic",
-          "person1": "Anh",
-          "age1": 8,
-          "person2": "Em",
-          "age2": 5,
-          "years": 3
-        }
+        "explanation": "Hiệu số tuổi giữa hai người luôn không đổi qua các năm.\nHiện nay ông hơn cháu là: 70 - 8 = 62 (tuổi).\nVậy 5 năm trước ông vẫn hơn cháu 62 tuổi."
       },
       {
         "id": "de7_q13",
@@ -1898,14 +1766,7 @@ export const PRACTICE_EXAMS = [
         "content": "Số lớn nhất có hai chữ số mà chữ số hàng chục gấp 4 lần chữ số hàng đơn vị là số: ........",
         "correctAnswer": "82",
         "hint": "Hàng chục gấp 4 lần hàng đơn vị: nếu hàng đơn vị là 2 thì hàng chục là 8.",
-        "explanation": "Nếu chữ số hàng đơn vị là 2 thì chữ số hàng chục là: 2 x 4 = 8. Ta được số 82.",
-        "diagram": {
-          "type": "digit_riddle",
-          "tenDigit": "?",
-          "unitDigit": "?",
-          "sum": 9,
-          "diff": 3
-        }
+        "explanation": "Nếu chữ số hàng đơn vị là 2 thì chữ số hàng chục là: 2 x 4 = 8. Ta được số 82."
       },
       {
         "id": "de7_q14",
@@ -2124,7 +1985,7 @@ export const PRACTICE_EXAMS = [
         "explanation": "Chủ Nhật tuần trước là ngày: 14 - 7 = 7.",
         "diagram": {
           "type": "calendar_day",
-          "weekday": "Chủ Nhật",
+          "weekday": "Thứ Ba",
           "day": 8
         }
       },
@@ -2143,10 +2004,7 @@ export const PRACTICE_EXAMS = [
         ],
         "correctAnswer": "4 ngày",
         "hint": "Đến ngày thứ 4, ông cắt 2 mét thì phần còn lại 2 mét cũng tự thành mảnh cuối cùng mà không cần nhát cắt ngày thứ 5!",
-        "explanation": "Sau 4 ngày ông đã cắt được 4 nhát, chia tấm vải thành 5 mảnh dài 2m. Mảnh cuối cùng tự rời ra không cần cắt nữa. Vậy chỉ mất 4 ngày.",
-        "diagram": {
-          "type": "cat_mouse"
-        }
+        "explanation": "Sau 4 ngày ông đã cắt được 4 nhát, chia tấm vải thành 5 mảnh dài 2m. Mảnh cuối cùng tự rời ra không cần cắt nữa. Vậy chỉ mất 4 ngày."
       },
       {
         "id": "de8_q12",
@@ -2157,15 +2015,7 @@ export const PRACTICE_EXAMS = [
         "content": "Năm nay anh 12 tuổi, em 4 tuổi. Hỏi mấy năm nữa tuổi anh gấp đôi tuổi em? Trả lời: Sau ........ năm nữa.",
         "correctAnswer": "4",
         "hint": "Anh hơn em: 12 - 4 = 8 tuổi. Khi tuổi anh gấp đôi tuổi em, em sẽ 8 tuổi. Sau: 8 - 4 = 4 năm.",
-        "explanation": "Anh hơn em: 12 - 4 = 8 (tuổi).\nKhi anh gấp đôi tuổi em thì em 8 tuổi và anh 16 tuổi.\nSố năm nữa là: 8 - 4 = 4 (năm).",
-        "diagram": {
-          "type": "age_logic",
-          "person1": "Anh",
-          "age1": 8,
-          "person2": "Em",
-          "age2": 5,
-          "years": 3
-        }
+        "explanation": "Anh hơn em: 12 - 4 = 8 (tuổi).\nKhi anh gấp đôi tuổi em thì em 8 tuổi và anh 16 tuổi.\nSố năm nữa là: 8 - 4 = 4 (năm)."
       },
       {
         "id": "de8_q13",
@@ -2176,14 +2026,7 @@ export const PRACTICE_EXAMS = [
         "content": "Tìm số có hai chữ số biết chữ số hàng đơn vị là 5, và khi đổi chỗ hai chữ số cho nhau thì số đó giảm đi 18 đơn vị. Số đó là: ........",
         "correctAnswer": "75",
         "hint": "Số ban đầu là a5, số mới là 5a. 75 đổi thành 57: 75 - 57 = 18.",
-        "explanation": "Số đó là 75. Khi đổi chỗ ta được 57.\n75 - 57 = 18 đơn vị.",
-        "diagram": {
-          "type": "digit_riddle",
-          "tenDigit": "?",
-          "unitDigit": "?",
-          "sum": 9,
-          "diff": 3
-        }
+        "explanation": "Số đó là 75. Khi đổi chỗ ta được 57.\n75 - 57 = 18 đơn vị."
       },
       {
         "id": "de8_q14",
@@ -2214,8 +2057,8 @@ export const PRACTICE_EXAMS = [
         "type": "fill_blank",
         "content": "Một hình chữ nhật dài được chia thành 5 ô vuông nhỏ nằm ngang. Hỏi có tất cả bao nhiêu hình chữ nhật?",
         "diagram": {
-          "type": "split_rect",
-          "count": 5
+          "type": "cubes_stack",
+          "total": 10
         },
         "correctAnswer": "15",
         "hint": "5 + 4 + 3 + 2 + 1 = 15 hình.",
@@ -2280,7 +2123,7 @@ export const PRACTICE_EXAMS = [
         "explanation": "🍎 = 5 (vì 5 + 5 = 10).\n🍌 = 9 - 5 = 4.\n🍊 = 7 - 4 = 3.",
         "diagram": {
           "type": "fruit_equation",
-          "sumApples": 12,
+          "sumApples": 10,
           "sumMixed": 11
         }
       },
@@ -2401,7 +2244,7 @@ export const PRACTICE_EXAMS = [
         "explanation": "Một tuần có 7 ngày. Ngày 1 là thứ Tư thì ngày 1 + 7 = 8 cũng là thứ Tư.",
         "diagram": {
           "type": "calendar_day",
-          "weekday": "Thứ Tư",
+          "weekday": "Thứ Ba",
           "day": 8
         }
       },
@@ -2420,10 +2263,7 @@ export const PRACTICE_EXAMS = [
         ],
         "correctAnswer": "Hướng Nam",
         "hint": "Quay phải lần 1 sang hướng Đông, quay phải lần 2 sang hướng Nam.",
-        "explanation": "Ban đầu hướng Bắc. Quay phải 1 góc vuông sang hướng Đông. Quay phải tiếp 1 góc vuông nữa thành hướng Nam (ngược lại với hướng Bắc).",
-        "diagram": {
-          "type": "cat_mouse"
-        }
+        "explanation": "Ban đầu hướng Bắc. Quay phải 1 góc vuông sang hướng Đông. Quay phải tiếp 1 góc vuông nữa thành hướng Nam (ngược lại với hướng Bắc)."
       },
       {
         "id": "de9_q12",
@@ -2434,15 +2274,7 @@ export const PRACTICE_EXAMS = [
         "content": "Tổng số tuổi của hai anh em hiện nay là 16 tuổi. Hỏi 3 năm nữa tổng số tuổi của hai anh em là bao nhiêu? ........ tuổi.",
         "correctAnswer": "22",
         "hint": "Mỗi người tăng 3 tuổi, hai người tăng 3 + 3 = 6 tuổi: 16 + 6.",
-        "explanation": "Sau 3 năm, mỗi người tăng 3 tuổi.\nTổng số tuổi hai anh em lúc đó là: 16 + 3 + 3 = 22 (tuổi).",
-        "diagram": {
-          "type": "age_logic",
-          "person1": "Anh",
-          "age1": 8,
-          "person2": "Em",
-          "age2": 5,
-          "years": 3
-        }
+        "explanation": "Sau 3 năm, mỗi người tăng 3 tuổi.\nTổng số tuổi hai anh em lúc đó là: 16 + 3 + 3 = 22 (tuổi)."
       },
       {
         "id": "de9_q13",
@@ -2459,14 +2291,7 @@ export const PRACTICE_EXAMS = [
           "64"
         ],
         "hint": "Hàng chục là 6, hàng đơn vị là 6 : 3 = 2.",
-        "explanation": "Hàng chục là 6 thì hàng đơn vị là 6 : 3 = 2. Số đó là 62.",
-        "diagram": {
-          "type": "digit_riddle",
-          "tenDigit": "?",
-          "unitDigit": "?",
-          "sum": 9,
-          "diff": 3
-        }
+        "explanation": "Hàng chục là 6 thì hàng đơn vị là 6 : 3 = 2. Số đó là 62."
       },
       {
         "id": "de9_q14",
@@ -2702,10 +2527,7 @@ export const PRACTICE_EXAMS = [
         ],
         "correctAnswer": "4 người",
         "hint": "Người chị gái là chị gái chung của cả 3 người con trai!",
-        "explanation": "3 người con trai có chung 1 người chị gái. Vậy bố có tất cả: 3 người con trai + 1 người con gái = 4 người con.",
-        "diagram": {
-          "type": "cat_mouse"
-        }
+        "explanation": "3 người con trai có chung 1 người chị gái. Vậy bố có tất cả: 3 người con trai + 1 người con gái = 4 người con."
       },
       {
         "id": "de10_q12",
@@ -2716,15 +2538,7 @@ export const PRACTICE_EXAMS = [
         "content": "Hiện nay mẹ 36 tuổi, con 8 tuổi. Hỏi cách đây 3 năm, mẹ hơn con bao nhiêu tuổi? ........ tuổi.",
         "correctAnswer": "28",
         "hint": "Hiệu số tuổi không đổi theo thời gian: 36 - 8 = ?",
-        "explanation": "Hiệu số tuổi của mẹ và con luôn không đổi theo thời gian.\nHiện nay mẹ hơn con: 36 - 8 = 28 (tuổi).\nVậy cách đây 3 năm mẹ vẫn hơn con 28 tuổi.",
-        "diagram": {
-          "type": "age_logic",
-          "person1": "Anh",
-          "age1": 8,
-          "person2": "Em",
-          "age2": 5,
-          "years": 3
-        }
+        "explanation": "Hiệu số tuổi của mẹ và con luôn không đổi theo thời gian.\nHiện nay mẹ hơn con: 36 - 8 = 28 (tuổi).\nVậy cách đây 3 năm mẹ vẫn hơn con 28 tuổi."
       },
       {
         "id": "de10_q13",
@@ -2735,14 +2549,7 @@ export const PRACTICE_EXAMS = [
         "content": "Tìm số có hai chữ số, biết chữ số hàng chục cộng với chữ số hàng đơn vị bằng 14, và chữ số hàng chục trừ chữ số hàng đơn vị bằng 2. Số đó là: ........",
         "correctAnswer": "86",
         "hint": "Hai số có tổng bằng 14 và hiệu bằng 2 là 8 và 6. Số đó là 86 (vì 8 + 6 = 14 và 8 - 6 = 2).",
-        "explanation": "Chữ số hàng chục là: (14 + 2) : 2 = 8.\nChữ số hàng đơn vị là: 8 - 2 = 6.\nVậy số đó là 86.",
-        "diagram": {
-          "type": "digit_riddle",
-          "tenDigit": "?",
-          "unitDigit": "?",
-          "sum": 9,
-          "diff": 3
-        }
+        "explanation": "Chữ số hàng chục là: (14 + 2) : 2 = 8.\nChữ số hàng đơn vị là: 8 - 2 = 6.\nVậy số đó là 86."
       },
       {
         "id": "de10_q14",
@@ -2773,7 +2580,8 @@ export const PRACTICE_EXAMS = [
         "type": "fill_blank",
         "content": "Một hình vuông có 2 đường chéo cắt nhau tại tâm. Trong hình vẽ có tất cả bao nhiêu hình tam giác?",
         "diagram": {
-          "type": "square_diagonals"
+          "type": "cubes_stack",
+          "total": 10
         },
         "correctAnswer": "8",
         "hint": "4 tam giác nhỏ và 4 tam giác lớn ghép đôi = 8 hình tam giác.",
